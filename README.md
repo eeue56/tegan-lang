@@ -6,7 +6,7 @@ Tegan's a silly language which I would never use, but it sure has a great toolse
 
 ## Diagram
 
-```
+```mermaid
 flowchart TD
     Text --> Tokenizer
     Tokenizer --> Errors
