@@ -77,6 +77,28 @@ Output:
 - Run in the browser, server, etc
 - Auto-formatter
 
+## Run
+
+### Run in interpreted mode
+
+```
+ts-node src/main.ts <filename>
+```
+
+### Start the repl
+
+```
+ts-node src/main.ts --repl
+```
+
+### Compile to native + run
+
+Require Go to be installed and on the path
+
+```
+ts-node src/generators/go.ts <filename>
+```
+
 ## Install the extension
 
 ```
