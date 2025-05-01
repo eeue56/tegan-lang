@@ -1,0 +1,14 @@
+{
+  "name": "tegan-lang",
+  "version": "1.0.0",
+  "description": "A toy language for demonstration purposes",
+  "main": "index.js",
+  "scripts": {
+    "build-extension": "cd extension && npm run package"
+  },
+  "author": "",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "@types/node": "^22.13.14"
+  }
+}

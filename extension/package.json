@@ -1,0 +1,94 @@
+{
+  "name": "tegan-lang-extension",
+  "displayName": "tegan-lang-extension",
+  "description": "Sample showing the Semantic Tokens Provider API",
+  "version": "0.0.1",
+  "publisher": "eeue56",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eeue56/tegan-lang"
+  },
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:tegan-lang"
+  ],
+  "main": "./out/main.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "tegan-lang",
+        "extensions": [
+          ".teg"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "teganLanguageServer.runCurrentFile",
+        "title": "Run Current File"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "teganLanguageServer.runCurrentFile",
+          "when": "editorLangId == tegan-lang"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Config",
+      "properties": {
+        "teganLanguageServer.maxNumberOfProblems": {
+          "scope": "resource",
+          "type": "number",
+          "default": 100,
+          "description": "Controls the maximum number of problems produced by the server."
+        },
+        "teganLanguageServer.trace.server": {
+          "scope": "window",
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "verbose",
+          "description": "Traces the communication between VS Code and the language server."
+        }
+      }
+    }
+  },
+  "configurationDefaults": {
+    "tegan-lang": {
+      "editor.semanticHighlighting.enabled": true
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile-extension": "esbuild ./src/extension.ts --bundle --outfile=out/main.js --external:vscode --format=cjs --platform=node",
+    "compile-lsp": "esbuild ./server/index.ts --bundle --outfile=server/out/server.js --external:vscode --format=cjs --platform=node",
+    "compile": "npm run compile-extension && npm run compile-lsp",
+    "package": "vsce package",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@stylistic/eslint-plugin": "^2.9.0",
+    "@types/node": "^20",
+    "@types/vscode": "^1.73.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  }
+}

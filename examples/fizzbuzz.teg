@@ -1,0 +1,42 @@
+print <-- % print the local stack
+    # 1 % add 1 to the stack
+    sum % sum everything on the stack, giving us our current index
+
+    # 15 % push 15 to the stack
+    @ div % divide stack sum by 15
+    @ eq
+    ? # "Fizz Buzz" => :output
+    ? # 1 => :has_match
+    pop % remove the result from the stack
+
+
+    # 5 % push 5 to the stack
+    @ rem % divide stack sum by 5
+    top => :has_match
+    add % :has_match's top item is 1 if we have already assigned something
+        % so we add it to the top item on the stack, which means we ignore
+        % any fizzes or buzzes for this number
+    @ eq % is it 0?
+    ? # "Buzz" => :output
+    ? # 1 => :has_match
+    pop % remove the result from the stack
+
+    # 3 % push 5 to the stack
+    @ rem % divide stack sum by 3
+    # 10 => :has_match
+    add
+    @ eq % is it 0?
+    ? # "Fizz" => :output
+    ? # 1 => :has_match
+    pop % remove the result from the stack
+
+    clear => :has_match
+
+    # 100 % push 10 to the stack to check if it's summed
+    @ eq % consume the 100, check if the sum is 100
+    @ not % if not 100, loop
+    ? loop %
+^-------
+
+print => :output
+

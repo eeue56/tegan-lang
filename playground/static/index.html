@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        justify-content: space-evenly;
+      }
+      .container > div {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="controls">
+        <button id="run-program">Run</button>
+        <button id="format-program">Format</button>
+      </div>
+      <div class="container">
+        <div id="codemirror-root"></div>
+        <div id="output-container"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

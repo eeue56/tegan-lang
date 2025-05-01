@@ -1,0 +1,16 @@
+{
+  "name": "tegan-lang",
+  "version": "1.0.0",
+  "description": "A toy language for demonstration purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild src/index.ts --bundle --outfile=static/main.js --external:readline --external:process"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "codemirror": "^6.0.1"
+  }
+}
