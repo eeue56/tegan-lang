@@ -69,7 +69,7 @@ Output:
 
 ## Tooling
 
-- Playground
+- [Playground](https://eeue56.github.io/tegan-lang/)
 - Debugger (call the `debug` function)
 - LSP with support for errors, file running, etc
 - VSCode semantic token syntax highlighting
@@ -78,6 +78,10 @@ Output:
 - Auto-formatter
 
 ## Run
+
+### Run in the browser
+
+Try out [the Playground here](https://eeue56.github.io/tegan-lang/)
 
 ### Run in interpreted mode
 
