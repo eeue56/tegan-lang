@@ -173,6 +173,7 @@ export async function debugRepl(
  * @returns the state when the repl exits
  */
 export async function repl(initialState: State): Promise<State> {
+  console.log("Starting repl, enter operations followed by 2 blank newlines");
   const rl = createReadlineInterface("Repl");
 
   let currentBuffer: string[] = [];

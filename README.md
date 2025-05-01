@@ -88,7 +88,7 @@ ts-node src/main.ts <filename>
 ### Start the repl
 
 ```
-ts-node src/main.ts --repl
+npm run start-repl
 ```
 
 ### Compile to native + run

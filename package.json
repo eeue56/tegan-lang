@@ -4,7 +4,8 @@
   "description": "A toy language for demonstration purposes",
   "main": "index.js",
   "scripts": {
-    "build-extension": "cd extension && npm run package"
+    "build-extension": "cd extension && npm run package",
+    "start-repl": "ts-node src/main.ts --repl"
   },
   "author": "",
   "license": "BSD-3-Clause",
